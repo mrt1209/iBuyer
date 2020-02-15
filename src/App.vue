@@ -4,32 +4,24 @@
             <router-link to="/">Home</router-link>|
             <router-link to="/about">About</router-link>
         </div>
-        <router-view />
-        <div>
-            <b-button variant="primary">Primary</b-button>
-            <b-button variant="secondary">Secondary</b-button>
-            <b-button variant="success">Success</b-button>
-            <b-button variant="danger">Danger</b-button>
-            <b-button variant="warning">Warning</b-button>
-            <b-button variant="info">Info</b-button>
-            <b-button variant="light">Light</b-button>
-            <b-button variant="dark">Dark</b-button>
-        </div>
+        <router-view></router-view>
     </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue, Prop } from "vue-property-decorator";
 import { BButton } from "bootstrap-vue";
+import HeroButton from "@/components/heroButton.vue";
 
 @Component({
     components: {
-        BButton
+        BButton,
+        HeroButton
     }
 })
 export default class App extends Vue {
-  // @Prop()
-  // private displaySingleColumnList!: boolean;
+    // @Prop()
+    // private displaySingleColumnList!: boolean;
 }
 </script>
 
