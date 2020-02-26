@@ -20,10 +20,10 @@ export default class HeroButton extends Vue {
 .brk-btn {
     position: relative;
     background: none;
-    color: rgb(175, 175, 175);
+    color: rgb(138, 240, 214);
     text-transform: uppercase;
     text-decoration: none;
-    border: 0.2em solid rgb(175, 175, 175);
+    border: 0.2em solid rgb(138, 240, 214);
     padding: 0.5em 1em;
     &::before {
         content: "";
