@@ -10,14 +10,14 @@
 
 <script lang="ts">
 import { Component, Vue, Prop } from "vue-property-decorator";
-import { BButton } from "bootstrap-vue";
+import { BIcon } from "bootstrap-vue";
 import HeroButton from "@/components/heroButton.vue";
 import axios from "axios";
-Vue.prototype.$axios = axios
+Vue.prototype.$axios = axios;
 
 @Component({
     components: {
-        BButton,
+        BIcon,
         HeroButton
     }
 })
