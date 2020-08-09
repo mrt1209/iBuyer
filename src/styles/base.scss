@@ -1,0 +1,9 @@
+$primary: rgb(162, 240, 187);
+$secondary: rgb(119, 200, 145);
+
+.component {
+    background-color: red;
+}
+
+@import '../../node_modules/bootstrap/scss/bootstrap';
+@import '../../node_modules/bootstrap-vue/src/index.scss';

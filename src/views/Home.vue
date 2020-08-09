@@ -3,16 +3,21 @@
         <b-container>
             <b-row>
                 <b-col>
-                    <h3 class="mb-4">Find iBuyers near <u>27587</u></h3>
+                    <h3 class="mb-4">Find iBuyers near you and choose your best offer</h3>
                 </b-col>
             </b-row>
             <b-row>
+                <b-col cols="6" offset="3">
+                    <b-form-input
+                        v-model="zipCode"
+                        size="lg"
+                        placeholder="Zip Code"
+                    ></b-form-input>
+                </b-col>
+            </b-row>
+            <b-row class="mt-4">
                 <b-col>
-                    <hero-button
-                        buttonText="Start"
-                        route="results"
-                        class="center"
-                    ></hero-button>
+                    <hero-button buttonText="Search" route="results" class="center"></hero-button>
                 </b-col>
             </b-row>
         </b-container>
@@ -20,9 +25,8 @@
 </template>
 
 <script>
-// @ is an alias to /src
 import HeroButton from "@/components/heroButton.vue";
-import { BRow, BCol, BContainer } from "bootstrap-vue";
+import { BRow, BCol, BContainer, BFormInput } from "bootstrap-vue";
 
 export default {
     name: "home",
@@ -30,16 +34,20 @@ export default {
         BRow,
         BCol,
         BContainer,
-        HeroButton
+        BFormInput,
+        HeroButton,
+    },
+    data() {
+        return {
+            zipCode: "",
+        };
     },
     methods: {
         getLocation() {
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(this.showPosition);
             } else {
-                alert(
-                    "Sorry, but Geolocation is not supported by this browser."
-                );
+                alert("Sorry, but Geolocation is not supported by this browser.");
             }
         },
 
@@ -52,7 +60,7 @@ export default {
                 "," +
                 long +
                 "&key=AIzaSyC4IahdhXLAx24uUUvTKmqaFLQJKcoevS0";
-            this.$axios.get(url).then(response => {
+            this.$axios.get(url).then((response) => {
                 this.results = response.data.results;
                 // console.log(this.results);
             });
@@ -70,11 +78,11 @@ export default {
             // 		console.log(req.responseText);
             // 	}
             // });
-        }
+        },
     },
     created() {
         this.getLocation();
-    }
+    },
 };
 </script>
 

@@ -4,6 +4,7 @@ import router from "./router";
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { BootstrapVue, IconsPlugin,  BIcon, BIconArrowUp, BIconArrowDown } from 'bootstrap-vue'; 
+import "./styles/base.scss";
 
 Vue.config.productionTip = false;
 

@@ -1,16 +1,20 @@
 <template>
     <div id="app">
-        <div id="nav">
-            <router-link to="/">Home</router-link>|
-            <router-link to="/results">About</router-link>
-        </div>
+        <b-navbar toggleable="lg" type="dark" variant="secondary">
+            <b-navbar-brand href="#">Choofer</b-navbar-brand>
+            <b-navbar-nav>
+                <b-nav-item to="/">Home</b-nav-item>
+                <b-nav-item to="/results">About</b-nav-item>
+            </b-navbar-nav>
+        </b-navbar>
+        <div class="spacer"></div>
         <router-view></router-view>
     </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue, Prop } from "vue-property-decorator";
-import { BIcon } from "bootstrap-vue";
+import { BIcon, BNavbarBrand, BNavbarNav, BNavbar, BNavItem } from "bootstrap-vue";
 import HeroButton from "@/components/heroButton.vue";
 import axios from "axios";
 Vue.prototype.$axios = axios;
@@ -18,16 +22,24 @@ Vue.prototype.$axios = axios;
 @Component({
     components: {
         BIcon,
-        HeroButton
-    }
+        BNavbarBrand,
+        BNavbarNav,
+        BNavbar,
+        BNavItem,
+        HeroButton,
+    },
 })
 export default class App extends Vue {
     // @Prop()
     // private displaySingleColumnList!: boolean;
+    apiKey = "AIzaSyC4IahdhXLAx24uUUvTKmqaFLQJKcoevS0";
+    google = null;
+    map = null;
 }
 </script>
 
-<style>
+<style lang="scss">
+@import "./styles/base.scss";
 #app {
     font-family: "Avenir", Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -47,5 +59,9 @@ export default class App extends Vue {
 
 #nav a.router-link-exact-active {
     color: #42b983;
+}
+
+.spacer {
+    height: 100px;
 }
 </style>
