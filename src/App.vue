@@ -1,13 +1,12 @@
 <template>
     <div id="app">
-        <b-navbar toggleable="lg" type="dark" variant="secondary">
+        <b-navbar toggleable="lg" variant="white">
             <b-navbar-brand href="#">Choofer</b-navbar-brand>
             <b-navbar-nav>
                 <b-nav-item to="/">Home</b-nav-item>
                 <b-nav-item to="/results">About</b-nav-item>
             </b-navbar-nav>
         </b-navbar>
-        <div class="spacer"></div>
         <router-view></router-view>
     </div>
 </template>

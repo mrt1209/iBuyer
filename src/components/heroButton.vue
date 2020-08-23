@@ -22,7 +22,7 @@ export default class HeroButton extends Vue {
 .brk-btn {
     position: relative;
     background: none;
-    color: $secondary;
+    color: $white;
     text-transform: uppercase;
     text-decoration: none;
     border: 0.2em solid $primary;
@@ -32,7 +32,7 @@ export default class HeroButton extends Vue {
         display: block;
         position: absolute;
         width: 10%;
-        background: white;
+        background: $secondary;
         height: 0.3em;
         right: 20%;
         top: -0.21em;
@@ -45,7 +45,7 @@ export default class HeroButton extends Vue {
         display: block;
         position: absolute;
         width: 10%;
-        background: white;
+        background: $secondary;
         height: 0.3em;
         left: 20%;
         bottom: -0.25em;

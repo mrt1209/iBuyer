@@ -1,13 +1,13 @@
 <template>
-    <div class="home">
-        <b-container>
+    <div class="home bg-secondary d-flex">
+        <b-container class="align-self-center">
             <b-row>
                 <b-col>
                     <h3 class="mb-4">Find iBuyers near you and choose your best offer</h3>
                 </b-col>
             </b-row>
             <b-row>
-                <b-col cols="6" offset="3">
+                <b-col cols="4" offset="4">
                     <b-form-input
                         v-model="zipCode"
                         size="lg"
@@ -86,4 +86,8 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.home {
+    min-height: 250px;
+}
+</style>
