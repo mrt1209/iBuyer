@@ -2,12 +2,12 @@
     <div class="home bg-secondary d-flex">
         <b-container class="align-self-center">
             <b-row>
-                <b-col>
+                <b-col :sm="12" :md="10" :lg="8" :offset-md="1" :offset-lg="2">
                     <h3 class="mb-4">Find iBuyers near you and choose your best offer</h3>
                 </b-col>
             </b-row>
             <b-row>
-                <b-col cols="4" offset="4">
+                <b-col :sm="10" :md="6" :lg="4" :offset-sm="1" :offset-md="3" :offset-lg="4">
                     <b-form-input v-model="zipCode" size="lg" placeholder="Zip Code"></b-form-input>
                 </b-col>
             </b-row>
