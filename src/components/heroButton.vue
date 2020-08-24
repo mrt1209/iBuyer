@@ -9,7 +9,6 @@
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
 
-
 @Component
 export default class HeroButton extends Vue {
     @Prop() private buttonText!: string;
@@ -20,12 +19,15 @@ export default class HeroButton extends Vue {
 <style lang="scss" scoped>
 @import "../styles/base.scss";
 .brk-btn {
+    a:hover {
+        color: $gray-100;
+    }
     position: relative;
     background: none;
-    color: $white;
+    color: $gray-100;
     text-transform: uppercase;
     text-decoration: none;
-    border: 0.2em solid $primary;
+    border: 0.2em solid $gray-100;
     padding: 0.5em 1em;
     &::before {
         content: "";
@@ -55,6 +57,7 @@ export default class HeroButton extends Vue {
     }
     &:hover {
         text-decoration: none;
+        color: $gray-100;
         &::before {
             right: 80%;
         }

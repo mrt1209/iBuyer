@@ -8,11 +8,7 @@
             </b-row>
             <b-row>
                 <b-col cols="4" offset="4">
-                    <b-form-input
-                        v-model="zipCode"
-                        size="lg"
-                        placeholder="Zip Code"
-                    ></b-form-input>
+                    <b-form-input v-model="zipCode" size="lg" placeholder="Zip Code"></b-form-input>
                 </b-col>
             </b-row>
             <b-row class="mt-4">
@@ -27,6 +23,8 @@
 <script>
 import HeroButton from "@/components/heroButton.vue";
 import { BRow, BCol, BContainer, BFormInput } from "bootstrap-vue";
+import { findNearest } from "geolib";
+import usZips from "us-zips/array";
 
 export default {
     name: "home",
@@ -44,43 +42,25 @@ export default {
     },
     methods: {
         getLocation() {
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(this.showPosition);
+            if (!navigator.geolocation) {
+                // status.textContent = "Geolocation is not supported by your browser";
             } else {
-                alert("Sorry, but Geolocation is not supported by this browser.");
+                // status.textContent = "Locating…";
+                navigator.geolocation.getCurrentPosition(this.showPosition);
             }
         },
-
         showPosition(position) {
-            var lat = position.coords.latitude;
-            var long = position.coords.longitude;
-            var url =
-                "https://maps.googleapis.com/maps/api/geocode/json?latlng=" +
-                lat +
-                "," +
-                long +
-                "&key=AIzaSyC4IahdhXLAx24uUUvTKmqaFLQJKcoevS0";
-            this.$axios.get(url).then((response) => {
-                this.results = response.data.results;
-                // console.log(this.results);
-            });
-            // $.ajax({
-            // 	type: "GET",
-            // 	url: url,
-            // 	dataType: "json",
-            // 	success: function (msg) {
-            // 		var results = msg.results;
-            // 		var zip = results[0].address_components[7].long_name;
-            // 		alert("Your zip code is: " + zip);
-            // 	},
-            // 	error: function (req, status, error) {
-            // 		alert('Sorry, an error occurred.');
-            // 		console.log(req.responseText);
-            // 	}
-            // });
+            let lat = position.coords.latitude;
+            let long = position.coords.longitude;
+            let somewhere = {
+                lat: lat,
+                lng: long,
+            };
+            let location = findNearest(somewhere, usZips);
+            this.zipCode = location.zipCode;
         },
     },
-    created() {
+    mounted() {
         this.getLocation();
     },
 };
