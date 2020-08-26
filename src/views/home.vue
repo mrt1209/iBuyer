@@ -1,9 +1,10 @@
 <template>
   <div class="home bg-secondary d-flex">
     <b-container class="align-self-center">
-      <b-row>
+      <b-row class="mb-3">
         <b-col :sm="12" :md="10" :lg="8" :offset-md="1" :offset-lg="2">
-          <h3 class="mb-4">Find iBuyers near you and choose your best offer</h3>
+          <h3 class="mb-4">We'll help guide you to the best buyers in your area</h3>
+          <h4>Enter your zip and select search to begin</h4>
         </b-col>
       </b-row>
       <b-row>

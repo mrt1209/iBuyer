@@ -1,8 +1,7 @@
 <template>
 	<div id="app">
 		<b-navbar toggleable="sm" variant="white">
-			<b-navbar-toggle target="nav-text-collapse"></b-navbar-toggle>
-			<b-navbar-brand href="#">Choofer</b-navbar-brand>
+			<b-navbar-brand class="pr-3" href="#"><b-img height="50" :src="require('./assets/compass-logo.jpg')"></b-img> iBuyer Guide </b-navbar-brand>
 			<b-collapse id="nav-text-collapse" is-nav>
 				<b-navbar-nav>
 					<b-nav-item to="/">Home</b-nav-item>
@@ -18,7 +17,7 @@
 
 <script lang="ts">
 import { Component, Vue, Prop } from "vue-property-decorator";
-import { BIcon, BNavbarBrand, BNavbarNav, BNavbar, BNavItem, BCollapse, BNavbarToggle } from "bootstrap-vue";
+import { BIcon, BNavbarBrand, BNavbarNav, BNavbar, BNavItem, BCollapse, BNavbarToggle, BImg } from "bootstrap-vue";
 import HeroButton from "@/components/heroButton.vue";
 import axios from "axios";
 Vue.prototype.$axios = axios;
@@ -32,6 +31,7 @@ Vue.prototype.$axios = axios;
 		BNavItem,
 		BCollapse,
 		BNavbarToggle,
+		BImg,
 		HeroButton,
 	},
 })
