@@ -2,7 +2,7 @@
 	<div>
 		<b-container>
 			<b-row>
-				<b-col :cols="4" :offset="4">
+				<b-col :sm="10" :md="8" :lg="6" :offset-sm="1" :offset-md="2" :offset-lg="3">
 					<h3>iBuyer's in your area</h3>
 					<p class="center">
 						Checkout the available iBuyers in your area. You can expand each section for even more detail.
@@ -73,7 +73,7 @@
 					<b-card no-body class="overflow-hidden">
 						<b-row>
 							<b-col md="3">
-								<b-card-img src="../assets/JohnWalker.png" alt="Image" class="rounded-1"></b-card-img>
+								<b-img src="../assets/JohnWalker.png" alt="Image" class="rounded-1"></b-img>
 							</b-col>
 							<b-col md="9">
 								<b-card-body title="Prefer to speak to a real agent?">
@@ -97,7 +97,7 @@
 </template>
 
 <script>
-import { BRow, BCol, BContainer, BCardGroup, BCard, BCardText } from "bootstrap-vue";
+import { BRow, BCol, BContainer, BCardGroup, BCard, BCardText, BImg } from "bootstrap-vue";
 
 export default {
 	name: "results",
@@ -108,6 +108,7 @@ export default {
 		BCardGroup,
 		BCard,
 		BCardText,
+		BImg,
 	},
 	methods: {},
 	created() {},
