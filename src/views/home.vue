@@ -84,6 +84,6 @@ export default {
 
 <style lang="scss" scoped>
 .home {
-  min-height: 250px;
+  min-height: 275px;
 }
 </style>

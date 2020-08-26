@@ -1,8 +1,9 @@
 <template>
 	<div id="app">
 		<b-navbar toggleable="sm" variant="white">
-			<b-navbar-brand class="pr-3" href="#"><b-img height="50" :src="require('./assets/compass-logo.jpg')"></b-img> iBuyer Guide </b-navbar-brand>
-			<b-collapse id="nav-text-collapse" is-nav>
+			<b-navbar-brand href="#"><b-img height="50" :src="require('./assets/compass-logo.jpg')"></b-img> iBuyer Guide </b-navbar-brand>
+			<b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+			<b-collapse id="nav-collapse" is-nav>
 				<b-navbar-nav>
 					<b-nav-item to="/">Home</b-nav-item>
 					<b-nav-item to="/results">Search Results</b-nav-item>
@@ -65,9 +66,5 @@ export default class App extends Vue {
 
 #nav a.router-link-exact-active {
 	color: #42b983;
-}
-
-.spacer {
-	height: 100px;
 }
 </style>
