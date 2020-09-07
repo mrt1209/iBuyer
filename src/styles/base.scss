@@ -1,9 +1,24 @@
 $primary: rgb(52, 124, 206);
 $secondary: rgb(50, 142, 248);
+$light-blue: rgb(165, 202, 245);
+$enable-gradients: true;
 
-.component {
-    background-color: red;
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+$enable-responsive-font-sizes: true;
+$font-family-sans-serif: "Nunito";
+$font-family-base: $font-family-sans-serif;
+
+body {
+  font: $font-family-base;
 }
 
-@import '../../node_modules/bootstrap/scss/bootstrap';
-@import '../../node_modules/bootstrap-vue/src/index.scss';
+#app {
+  font-family: $font-family-base !important;
+}
+
+.component {
+  background-color: red;
+}
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "../../node_modules/bootstrap-vue/src/index.scss";

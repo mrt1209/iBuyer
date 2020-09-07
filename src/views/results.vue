@@ -1,13 +1,13 @@
 <template>
   <!-- <div> -->
     <b-container fluid>
-      <div class="bg-secondary results-hero-banner mb-3">
+      <div class="results-hero-banner mb-3">
         <b-row>
           <b-col :sm="10" :md="8" :lg="6" :offset-sm="1" :offset-md="2" :offset-lg="3">
             <h3>iBuyer's in your area</h3>
             <p
               class="center"
-            >Checkout the available iBuyers in your area. You can expand each section for even more detail.</p>
+            >Checkout the available iBuyers near {{zipCode}}. You can expand each section for even more detail.</p>
           </b-col>
         </b-row>
       </div>
@@ -75,7 +75,7 @@
               <b-col md="3">
                 <b-card-img
                   :src="require('../assets/JohnWalker.png')"
-                  alt="Image"
+                  alt="Agent"
                   class="rounded-1"
                 ></b-card-img>
               </b-col>
@@ -84,9 +84,7 @@
                   <b-card-text>
                     While many iBuyers offer convenience and a quick selling process, your most
                     competitive offer will likely be brought to you from a dedicated agent who can list
-                    and market your home as well as walk you through the buying and selling process step
-                    by step.
-                    <br>
+                    and market your home for you.
                     <br>Click here to connect with an agent today!
                   </b-card-text>
                 </b-card-body>
@@ -112,16 +110,13 @@ export default {
 	BContainer,
     BCardText
   },
+  props: {
+    zipCode: Number
+  },
   methods: {},
   created() {}
 };
 </script>
 
 <style lang="scss" scoped>
-.results-hero-banner {
-  height: 200px;
-}
-.spacer {
-	// margin-top: 200px;
-}
 </style>

@@ -1,35 +1,20 @@
 <template>
-  <div class="home bg-secondary d-flex">
+  <div class="home d-flex">
     <b-container class="align-self-center">
       <b-row class="mb-3">
         <b-col :sm="12" :md="10" :lg="8" :offset-md="1" :offset-lg="2">
           <h3 class="mb-4">We'll help guide you to the best buyers in your area</h3>
-          <h4>Enter your zip and select search to begin</h4>
+          <h4>Enter your zip and click search to begin</h4>
         </b-col>
       </b-row>
       <b-row>
-        <b-col
-          :sm="10"
-          :md="6"
-          :lg="4"
-          :offset-sm="1"
-          :offset-md="3"
-          :offset-lg="4"
-        >
-          <b-form-input
-            v-model="zipCode"
-            size="lg"
-            placeholder="Zip Code"
-          ></b-form-input>
+        <b-col :sm="10" :md="6" :lg="4" :offset-sm="1" :offset-md="3" :offset-lg="4">
+          <b-form-input v-model="zipCode" size="lg" placeholder="Zip Code"></b-form-input>
         </b-col>
       </b-row>
-      <b-row class="mt-4">
+      <b-row class="mt-4 pb-3">
         <b-col>
-          <hero-button
-            buttonText="Search"
-            route="results"
-            class="center"
-          ></hero-button>
+          <b-button :to="{ name: 'results', params: { zipCode: zipCode }}">Search</b-button>
         </b-col>
       </b-row>
     </b-container>
@@ -37,8 +22,7 @@
 </template>
 
 <script>
-import HeroButton from "@/components/heroButton.vue";
-import { BRow, BCol, BContainer, BFormInput } from "bootstrap-vue";
+import { BRow, BCol, BContainer, BFormInput, BButton } from "bootstrap-vue";
 import { findNearest } from "geolib";
 import usZips from "us-zips/array";
 
@@ -49,7 +33,7 @@ export default {
     BCol,
     BContainer,
     BFormInput,
-    HeroButton
+    BButton,
   },
   data() {
     return {
@@ -59,9 +43,7 @@ export default {
   methods: {
     getLocation() {
       if (!navigator.geolocation) {
-        // status.textContent = "Geolocation is not supported by your browser";
       } else {
-        // status.textContent = "Locating…";
         navigator.geolocation.getCurrentPosition(this.showPosition);
       }
     },
@@ -84,6 +66,7 @@ export default {
 
 <style lang="scss" scoped>
 .home {
-  min-height: 275px;
+  overflow: hidden;
+  margin-top: 150px;
 }
 </style>
