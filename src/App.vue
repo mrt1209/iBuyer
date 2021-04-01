@@ -2,7 +2,8 @@
 	<div id="app" class="app-parent">
 		<b-navbar toggleable="sm" class="bg-transparent">
 			<b-navbar-brand href="#">
-				<b-img height="50" :src="require('./assets/Chooffer_logo_small.png')"></b-img> Chooffer
+				<b-img height="50" :src="require('./assets/Chooffer_logo_small.png')"></b-img>
+				Chooffer
 			</b-navbar-brand>
 			<b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 			<b-collapse id="nav-collapse" is-nav>
@@ -18,9 +19,9 @@
 	</div>
 </template>
 
-<script lang="ts"> 
+<script lang="ts">
 import { BNavbarBrand, BNavbarNav, BNavbar, BNavItem, BCollapse, BNavbarToggle, BImg } from "bootstrap-vue";
-import HeroButton from "@/components/heroButton.vue";
+// import HeroButton from "@/components/heroButton.vue";
 
 export default {
 	components: {

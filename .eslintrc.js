@@ -14,7 +14,7 @@ module.exports = {
 	rules: {
 		"no-console": "off",
 		"no-debugger": "off",
-		indent: ["error", "tab"],
+		useTabs: false,
 	},
 
 	extends: ["plugin:vue/essential", "eslint:recommended", "@vue/prettier"],
